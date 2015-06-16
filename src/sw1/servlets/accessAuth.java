@@ -1,5 +1,7 @@
 package sw1.servlets;
 
+import sw1.model.Usuario;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +24,7 @@ public class accessAuth extends HttpServlet {
 
         HttpSession ses = request.getSession(true);
 
-        List autorizadores = new ArrayList<>();
+        List<Usuario> autorizadores = new ArrayList<Usuario>();
 
         ses.setAttribute("acceso", acceso);
         ses.setAttribute("auth", autorizadores);
