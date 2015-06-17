@@ -153,6 +153,18 @@ footer a:hover {
     border-radius: 0px 0px 8px 8px;
 }
 
+.barra-superior2 {
+    background-color: #007ba4;
+    color: white;
+    font-size: 3em;
+    padding-left: 1em;
+    font-weight: bold;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    height: auto;
+    border-radius: 0px 0px 8px 8px;
+}
+
 .textito{
     color: darkblue;
 }
