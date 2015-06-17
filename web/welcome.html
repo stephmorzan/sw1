@@ -11,27 +11,61 @@
 <body>
 <div class="contain-to-grid contenedor-superior">
     <nav class="top-bar barra-superior" data-topbar role="navigation">
-        BCP - PRIMA
+        PRIMAACCESS
     </nav>
 </div>
+<br>
+
 <div class="row">
     <div class="column small-12 large-8 large-offset-2">
-        <br>
-        <div class="row">
-            <div class="large-12 columns">
-                <label>Acceso:
-                    <select>
-                        <option value="none" disabled selected>Seleccione una Opcion</option>
-                        <option value="Internet">Internet</option>
-                        <option value="Buzon">Buzón</option>
-                        <option value="Compartida">Carpeta Compartida</option>
-                        <option value="USB">USB</option>
-                        <option value="Directory">Active Directory</option>
-                    </select>
-                </label>
-            </div>
-        </div>
+        <h2 class="textito">Bienvenido S47116</h2>
     </div>
+</div>
+
+<div class="row">
+    <form action="accessAuth" method="get">
+        <div class="column small-12 large-8 large-offset-2">
+            <br>
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <label class="textito">Acceso:
+                        <select class="textito">
+                            <option value="none" disabled selected>Seleccione una Opcion</option>
+                            <option value="Internet" name="internet">Internet</option>
+                            <option value="Buzon" name="buzon">Buzón</option>
+                            <option value="Compartida" name="compartida">Carpetas Compartidas</option>
+                            <option value="USB" name="usb">USB</option>
+                            <option value="Directory" name="directory">Active Directory</option>
+                        </select>
+                    </label>
+                </div>
+
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="large-6 columns textito">
+                    Nombre del acceso a solicitar:
+                </div>
+                <div class="large-6 columns">
+                    <input type="text" name="nombAcceso" class="textito">
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="large-4 columns">
+                </div>
+                <div class="large-4 small-4 columns large-offset-4 small-offset-4">
+                    <input type="submit" value="Enviar" class="postfix botones">
+                </div>
+                <div class="large-4 columns">
+                </div>
+            </div>
+
+        </div>
+    </form>
 </div>
 
 <script src="js/vendor/jquery.js"></script>

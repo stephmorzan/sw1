@@ -153,6 +153,11 @@ footer a:hover {
     border-radius: 0px 0px 8px 8px;
 }
 
-.contenido {
+.textito{
+    color: darkblue;
+}
 
+.botones{
+    background-color: #E44F25;
+    color: #FFFFFF;
 }
