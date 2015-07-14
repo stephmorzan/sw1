@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Ricardo on 14/07/2015.
  */
 @Entity
-@Table(name = "perfil_internet", schema = "", catalog = "bcp")
+@Table(name = "perfil_internet", schema = "bcp", catalog = "bcp")
 public class PerfilInternetEntity {
     private int idperfilInternet;
     private String nombrePerfil;
@@ -49,5 +49,13 @@ public class PerfilInternetEntity {
         int result = idperfilInternet;
         result = 31 * result + (nombrePerfil != null ? nombrePerfil.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "PerfilInternetEntity{" +
+                "idperfilInternet=" + idperfilInternet +
+                ", nombrePerfil='" + nombrePerfil + '\'' +
+                '}';
     }
 }

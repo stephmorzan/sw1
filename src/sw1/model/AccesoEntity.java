@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Ricardo on 14/07/2015.
  */
 @Entity
-@Table(name = "acceso", schema = "", catalog = "bcp")
+@Table(name = "acceso", schema = "bcp", catalog = "bcp")
 public class AccesoEntity {
     private int idAcceso;
     private BuzonEntity idBuzon;
@@ -68,5 +68,15 @@ public class AccesoEntity {
 
     public void setIdPerfilInternet(PerfilInternetEntity idPerfilInternet) {
         this.idPerfilInternet = idPerfilInternet;
+    }
+
+    @Override
+    public String toString() {
+        return "AccesoEntity{" +
+                "idAcceso=" + idAcceso +
+                ", idBuzon=" + idBuzon +
+                ", idCarpetaComp=" + idCarpetaComp +
+                ", idPerfilInternet=" + idPerfilInternet +
+                '}';
     }
 }

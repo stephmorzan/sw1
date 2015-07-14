@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Ricardo on 14/07/2015.
  */
 @Entity
-@Table(name = "carpetacompartida", schema = "", catalog = "bcp")
+@Table(name = "carpetacompartida", schema = "bcp", catalog = "bcp")
 public class CarpetacompartidaEntity {
     private int idCarpetaComp;
     private String nombreCarpComp;
@@ -50,5 +50,13 @@ public class CarpetacompartidaEntity {
         int result = idCarpetaComp;
         result = 31 * result + (nombreCarpComp != null ? nombreCarpComp.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "CarpetacompartidaEntity{" +
+                "idCarpetaComp=" + idCarpetaComp +
+                ", nombreCarpComp='" + nombreCarpComp + '\'' +
+                '}';
     }
 }

@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Ricardo on 14/07/2015.
  */
 @Entity
-@Table(name = "buzon", schema = "", catalog = "bcp")
+@Table(name = "buzon", schema = "bcp", catalog = "bcp")
 public class BuzonEntity {
     private int idBuzon;
     private String nombreBuzon;
@@ -49,5 +49,13 @@ public class BuzonEntity {
         int result = idBuzon;
         result = 31 * result + (nombreBuzon != null ? nombreBuzon.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "BuzonEntity{" +
+                "idBuzon=" + idBuzon +
+                ", nombreBuzon='" + nombreBuzon + '\'' +
+                '}';
     }
 }

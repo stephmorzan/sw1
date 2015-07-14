@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Ricardo on 14/07/2015.
  */
 @Entity
-@Table(name = "usuarioxacceso", schema = "", catalog = "bcp")
+@Table(name = "usuarioxacceso", schema = "bcp", catalog = "bcp")
 public class UsuarioxaccesoEntity {
     private String autorizador;
     private AccesoEntity idAcceso;
@@ -68,5 +68,16 @@ public class UsuarioxaccesoEntity {
 
     public void setIdJefe(UsuarioEntity idJefe) {
         this.idJefe = idJefe;
+    }
+
+    private String id;
+
+    @Id
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

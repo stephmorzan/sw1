@@ -36,5 +36,6 @@
     <orderEntry type="library" name="commonj.sdo-2.1.1" level="project" />
     <orderEntry type="library" name="eclipselink-2.5.1" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.35" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6 (2)" level="project" />
   </component>
 </module>

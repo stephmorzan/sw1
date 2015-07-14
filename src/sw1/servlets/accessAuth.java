@@ -21,7 +21,11 @@ public class accessAuth extends HttpServlet {
         HttpSession ses = request.getSession(true);
 
 
+        String nombAcceso = request.getParameter("nombAcceso");
+
+
         ses.setAttribute("acceso", acceso);
+        ses.setAttribute("nombAcceso", nombAcceso);
 
         RequestDispatcher rd = request.getRequestDispatcher("/autorizadores.html");
         rd.forward(request,response);

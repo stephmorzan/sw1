@@ -110,6 +110,7 @@
         <entity class="sw1.model.UsuarioxaccesoEntity">
                 <table name="usuarioxacceso" schema="" catalog="bcp"/>
                 <attributes>
+                        <id name="id"/>
                         <basic name="autorizador">
                                 <column name="autorizador"/>
                         </basic>

@@ -6,13 +6,14 @@ import javax.persistence.*;
  * Created by Ricardo on 13/07/2015.
  */
 @Entity
-@Table(name = "usuario", schema = "", catalog = "bcp")
+@Table(name = "usuario", schema = "bcp", catalog = "bcp")
 public class UsuarioEntity {
     private int idUsuario;
     private String nombre;
     private String apellido;
     private String clave;
     private String email;
+    private String matricula;
     private PuestoEntity idPuesto;
     private UsuarioEntity idJefe;
 
@@ -66,6 +67,16 @@ public class UsuarioEntity {
         this.email = email;
     }
 
+    @Basic
+    @Column(name = "matricula")
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,6 +89,7 @@ public class UsuarioEntity {
         if (apellido != null ? !apellido.equals(that.apellido) : that.apellido != null) return false;
         if (clave != null ? !clave.equals(that.clave) : that.clave != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (matricula != null ? !matricula.equals(that.matricula) : that.matricula != null) return false;
 
         return true;
     }
@@ -89,6 +101,7 @@ public class UsuarioEntity {
         result = 31 * result + (apellido != null ? apellido.hashCode() : 0);
         result = 31 * result + (clave != null ? clave.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (matricula != null ? matricula.hashCode() : 0);
         return result;
     }
 
