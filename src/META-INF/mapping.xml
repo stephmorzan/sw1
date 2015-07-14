@@ -2,6 +2,49 @@
 <entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
         version="2.0">
 
+        <entity class="sw1.model.AccesoEntity">
+                <table name="acceso" schema="" catalog="bcp"/>
+                <attributes>
+                        <id name="idAcceso">
+                                <column name="idAcceso"/>
+                        </id>
+                        <one-to-one name="idBuzon" optional="true" target-entity="sw1.model.BuzonEntity">
+                                <join-column name="idBuzon" nullable="false" referenced-column-name="idBuzon"/>
+                        </one-to-one>
+                        <one-to-one name="idCarpetaComp" optional="true"
+                                    target-entity="sw1.model.CarpetacompartidaEntity">
+                                <join-column name="idCarpetaComp" nullable="false"
+                                             referenced-column-name="idCarpetaComp"/>
+                        </one-to-one>
+                        <one-to-one name="idPerfilInternet" optional="true"
+                                    target-entity="sw1.model.PerfilInternetEntity">
+                                <join-column name="idPerfil_Internet" nullable="false"
+                                             referenced-column-name="idperfil_Internet"/>
+                        </one-to-one>
+                </attributes>
+        </entity>
+        <entity class="sw1.model.BuzonEntity">
+                <table name="buzon" schema="" catalog="bcp"/>
+                <attributes>
+                        <id name="idBuzon">
+                                <column name="idBuzon"/>
+                        </id>
+                        <basic name="nombreBuzon">
+                                <column name="nombreBuzon"/>
+                        </basic>
+                </attributes>
+        </entity>
+        <entity class="sw1.model.CarpetacompartidaEntity">
+                <table name="carpetacompartida" schema="" catalog="bcp"/>
+                <attributes>
+                        <id name="idCarpetaComp">
+                                <column name="idCarpetaComp"/>
+                        </id>
+                        <basic name="nombreCarpComp">
+                                <column name="nombreCarpComp"/>
+                        </basic>
+                </attributes>
+        </entity>
         <entity class="sw1.model.MatrizEntity">
                 <table name="matriz" schema="" catalog="bcp"/>
                 <attributes>
@@ -10,6 +53,17 @@
                         </id>
                         <basic name="area">
                                 <column name="area"/>
+                        </basic>
+                </attributes>
+        </entity>
+        <entity class="sw1.model.PerfilInternetEntity">
+                <table name="perfil_internet" schema="" catalog="bcp"/>
+                <attributes>
+                        <id name="idperfilInternet">
+                                <column name="idperfil_Internet"/>
+                        </id>
+                        <basic name="nombrePerfil">
+                                <column name="nombrePerfil"/>
                         </basic>
                 </attributes>
         </entity>
@@ -50,6 +104,23 @@
                         </one-to-one>
                         <one-to-one name="idJefe" optional="true" target-entity="sw1.model.UsuarioEntity">
                                 <join-column name="idJefe" referenced-column-name="id_usuario"/>
+                        </one-to-one>
+                </attributes>
+        </entity>
+        <entity class="sw1.model.UsuarioxaccesoEntity">
+                <table name="usuarioxacceso" schema="" catalog="bcp"/>
+                <attributes>
+                        <basic name="autorizador">
+                                <column name="autorizador"/>
+                        </basic>
+                        <one-to-one name="idAcceso" optional="true" target-entity="sw1.model.AccesoEntity">
+                                <join-column name="idAcceso" nullable="false" referenced-column-name="idAcceso"/>
+                        </one-to-one>
+                        <one-to-one name="idUsuario" optional="true" target-entity="sw1.model.UsuarioEntity">
+                                <join-column name="idUsuario" nullable="false" referenced-column-name="id_usuario"/>
+                        </one-to-one>
+                        <one-to-one name="idJefe" optional="true" target-entity="sw1.model.UsuarioEntity">
+                                <join-column name="idJefe" nullable="false" referenced-column-name="id_usuario"/>
                         </one-to-one>
                 </attributes>
         </entity>
