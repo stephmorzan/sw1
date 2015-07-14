@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+        <entity class="sw1.model.MatrizEntity">
+                <table name="matriz" schema="" catalog="bcp"/>
+                <attributes>
+                        <id name="idMatriz">
+                                <column name="idMatriz"/>
+                        </id>
+                        <basic name="area">
+                                <column name="area"/>
+                        </basic>
+                </attributes>
+        </entity>
+        <entity class="sw1.model.PuestoEntity">
+                <table name="puesto" schema="" catalog="bcp"/>
+                <attributes>
+                        <id name="idPuesto">
+                                <column name="idPuesto"/>
+                        </id>
+                        <basic name="nombrePuesto">
+                                <column name="nombrePuesto"/>
+                        </basic>
+                        <one-to-one name="idMatriz" optional="true" target-entity="sw1.model.MatrizEntity">
+                                <join-column name="idMatriz" nullable="false" referenced-column-name="idMatriz"/>
+                        </one-to-one>
+                </attributes>
+        </entity>
+        <entity class="sw1.model.UsuarioEntity">
+                <table name="usuario" schema="" catalog="bcp"/>
+                <attributes>
+                        <id name="idUsuario">
+                                <column name="id_usuario"/>
+                        </id>
+                        <basic name="nombre">
+                                <column name="nombre"/>
+                        </basic>
+                        <basic name="apellido">
+                                <column name="apellido"/>
+                        </basic>
+                        <basic name="clave">
+                                <column name="clave"/>
+                        </basic>
+                        <basic name="email">
+                                <column name="email"/>
+                        </basic>
+                        <one-to-one name="idPuesto" optional="true" target-entity="sw1.model.PuestoEntity">
+                                <join-column name="idPuesto" referenced-column-name="idPuesto"/>
+                        </one-to-one>
+                        <one-to-one name="idJefe" optional="true" target-entity="sw1.model.UsuarioEntity">
+                                <join-column name="idJefe" referenced-column-name="id_usuario"/>
+                        </one-to-one>
+                </attributes>
+        </entity>
+</entity-mappings>
