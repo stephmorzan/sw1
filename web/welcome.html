@@ -11,10 +11,8 @@
 <body>
 <div class="contain-to-grid contenedor-superior">
     <nav class="top-bar barra-superior" data-topbar role="navigation">
-        <div class="small-6 medium-9 large-10 column" style="margin-top: 1em!important;">ACCESOSPRIMA</div>
-        <img class="small-6 medium-3 large-2 column" src="img/prima.jpg" align="right">
+        ACCESOSPRIMA
     </nav>
-
 </div>
 <br>
 
@@ -32,13 +30,13 @@
             <div class="row">
                 <div class="large-12 columns">
                     <label class="textito">Acceso:
-                        <select class="textito" id="seleccion">
+                        <select class="textito">
                             <option value="none" disabled selected>Seleccione una Opcion</option>
                             <option value="Internet" name="internet">Internet</option>
                             <option value="Buzon" name="buzon">Buzón</option>
-                            <option value="Carpetas Compartidas" name="compartida">Carpetas Compartidas</option>
+                            <option value="Compartida" name="compartida">Carpetas Compartidas</option>
                             <option value="USB" name="usb">USB</option>
-                            <option value="Active Directory" name="directory">Active Directory</option>
+                            <option value="Directory" name="directory">Active Directory</option>
                         </select>
                     </label>
                 </div>
@@ -51,16 +49,17 @@
                     Nombre del acceso a solicitar:
                 </div>
                 <div class="large-6 columns">
-                    <input id="nombAcceso" type="text" name="nombAcceso" class="textito">
+                    <input type="text" name="nombAcceso" class="textito">
                 </div>
             </div>
             <br>
 
             <div class="row">
                 <div class="small-4 large-centered columns">
-                    <input type="submit" value="Enviar" class="postfix botones" onclick="guardar()">
+                    <input type="submit" value="Enviar" class="postfix botones">
                 </div>
             </div>
+
         </div>
     </form>
 </div>
