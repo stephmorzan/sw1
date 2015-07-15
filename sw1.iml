@@ -36,13 +36,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0" level="application_server_libraries" />
-    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
-    <orderEntry type="library" name="JPA 2.1-2.1" level="project" />
-    <orderEntry type="library" name="com.springsource.javax.persistence-2.0.0" level="project" />
-    <orderEntry type="library" name="commonj.sdo-2.1.1" level="project" />
-    <orderEntry type="library" name="eclipselink-2.5.1" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.35" level="project" />
-    <orderEntry type="library" name="Java EE 6-Java EE 6 (2)" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 4.1.0" level="application_server_libraries" />
+    <orderEntry type="library" exported="" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" exported="" name="JPA 2.1-2.1" level="project" />
+    <orderEntry type="library" exported="" name="com.springsource.javax.persistence-2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="commonj.sdo-2.1.1" level="project" />
+    <orderEntry type="library" exported="" name="eclipselink-2.5.1" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-5.1.35" level="project" />
+    <orderEntry type="library" exported="" name="Java EE 6-Java EE 6 (2)" level="project" />
   </component>
 </module>
