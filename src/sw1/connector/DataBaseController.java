@@ -10,7 +10,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -72,12 +71,11 @@ public class DataBaseController {
     }
 
     public UsuarioEntity doLogin(String email, String clave) {
-
         return null;
     }
 
     public List<AccesoEntity> getAllAccesos() {
-        List<AccesoEntity> accesos = new ArrayList<>();
+        List<AccesoEntity> accesos;
         manager = factory.createEntityManager();
         manager.getTransaction().begin();
 
