@@ -1,3 +1,5 @@
+<%@ page import="sw1.model.AccesoEntity" %>
+<%@ page import="sw1.connector.DataBaseController" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html class="no-js" lang="en">
@@ -35,11 +37,14 @@
           <label class="textito">Acceso:
             <select class="textito" id="seleccion" name="seleccion">
               <option value="none" disabled selected>Seleccione una Opcion</option>
+
               <option value="Internet" name="internet">Internet</option>
-              <option value="Buzon" name="buzon">Buzón</option>
-              <option value="Carpetas Compartidas" name="compartida">Carpetas Compartidas</option>
-              <option value="USB" name="usb">USB</option>
-              <option value="Active Directory" name="directory">Active Directory</option>
+              <%
+                for (AccesoEntity c: DataBaseController.getInstance().getAllAccesos()){
+                  System.out.println(c);
+                }
+              %>
+
             </select>
           </label>
         </div>
@@ -47,15 +52,17 @@
       </div>
       <br>
 
-      <!--<div class="row">
+
+
+      <div class="row">
         <div class="large-6 columns textito">
-          Nombre del acceso a solicitar:
+          Comentarios Adicionales:
         </div>
         <div class="large-6 columns">
           <input id="nombAcceso" type="text" name="nombAcceso" class="textito">
         </div>
       </div>
-      <br>-->
+      <br>
 
       <div class="row">
         <div class="small-4 large-centered columns">
