@@ -2,7 +2,6 @@ package sw1.servlets;
 
 import sw1.connector.DataBaseController;
 
-import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by smorzán on 14/07/2015.
  */
-@WebServlet(name = "Welcome")
+@WebServlet(name = "Welcome", urlPatterns = {"/welcome"})
 public class welcome extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
