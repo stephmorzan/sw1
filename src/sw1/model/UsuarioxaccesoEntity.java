@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Ricardo on 14/07/2015.
  */
 @Entity
-@Table(name = "usuarioxacceso", schema = "bcp", catalog = "bcp")
+@Table(name = "usuarioxacceso", schema = "", catalog = "bcp")
 public class UsuarioxaccesoEntity {
     private String autorizador;
     private AccesoEntity idAcceso;
@@ -30,9 +30,8 @@ public class UsuarioxaccesoEntity {
 
         UsuarioxaccesoEntity that = (UsuarioxaccesoEntity) o;
 
-        if (autorizador != null ? !autorizador.equals(that.autorizador) : that.autorizador != null) return false;
+        return !(autorizador != null ? !autorizador.equals(that.autorizador) : that.autorizador != null);
 
-        return true;
     }
 
     @Override
@@ -70,14 +69,4 @@ public class UsuarioxaccesoEntity {
         this.idJefe = idJefe;
     }
 
-    private String id;
-
-    @Id
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }

@@ -21,7 +21,9 @@
                                 <join-column name="idPerfil_Internet" nullable="false"
                                              referenced-column-name="idperfil_Internet"/>
                         </one-to-one>
+
                 </attributes>
+
         </entity>
         <entity class="sw1.model.BuzonEntity">
                 <table name="buzon" schema="" catalog="bcp"/>

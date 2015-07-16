@@ -1,8 +1,10 @@
 <%@ page import="sw1.model.AccesoEntity" %>
 <%@ page import="sw1.connector.DataBaseController" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html class="no-js" lang="en">
+
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,6 +12,7 @@
   <link rel="stylesheet" href="css/foundation.css"/>
   <link rel="stylesheet" href="css/main.css">
   <script src="js/vendor/modernizr.js"></script>
+
 </head>
 <body>
 <div class="contain-to-grid contenedor-superior">
@@ -39,11 +42,11 @@
               <option value="none" disabled selected>Seleccione una Opcion</option>
 
               <option value="Internet" name="internet">Internet</option>
-              <%
-                for (AccesoEntity c: DataBaseController.getInstance().getAllAccesos()){
-                  System.out.println(c);
-                }
-              %>
+
+              <c:forEach var="i" items="${sessionScope.accesos}">
+                <option value="<c:out value="${i.idAcceso}"/>">
+                  <c:out value="${i.gettearNombreAcceso()}"/> </option>
+              </c:forEach>
 
             </select>
           </label>

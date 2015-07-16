@@ -1,10 +1,7 @@
 package sw1.connector;
 
 
-import sw1.model.AccesoEntity;
-import sw1.model.MatrizEntity;
-import sw1.model.PuestoEntity;
-import sw1.model.UsuarioEntity;
+import sw1.model.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -84,6 +81,19 @@ public class DataBaseController {
         accesos = query.getResultList();
 
         return accesos;
+    }
+
+    public boolean guardarSolicitud(int accesoEntity) {
+        manager = factory.createEntityManager();
+        manager.getTransaction().begin();
+        UsuarioxaccesoEntity entity = new UsuarioxaccesoEntity();
+        entity.setIdUsuario(manager.find(UsuarioEntity.class, 2));
+        entity.setIdJefe(manager.find(UsuarioEntity.class, 3));
+        entity.setAutorizador("Alex Vidal");
+        entity.setIdAcceso(manager.find(AccesoEntity.class, accesoEntity));
+        manager.persist(entity);
+        manager.getTransaction().commit();
+        return false;
     }
 
     @Override

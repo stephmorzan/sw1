@@ -13,6 +13,8 @@ public class AccesoEntity {
     private CarpetacompartidaEntity idCarpetaComp;
     private PerfilInternetEntity idPerfilInternet;
 
+
+
     @Id
     @Column(name = "idAcceso")
     public int getIdAcceso() {
@@ -30,9 +32,8 @@ public class AccesoEntity {
 
         AccesoEntity that = (AccesoEntity) o;
 
-        if (idAcceso != that.idAcceso) return false;
+        return idAcceso == that.idAcceso;
 
-        return true;
     }
 
     @Override
@@ -79,4 +80,19 @@ public class AccesoEntity {
                 ", idPerfilInternet=" + idPerfilInternet +
                 '}';
     }
+
+
+
+    public String gettearNombreAcceso(){
+        if (idBuzon != null){
+            return idBuzon.getNombreBuzon();
+        }else if(idCarpetaComp != null){
+            return idCarpetaComp.getNombreCarpComp();
+        }else if(idPerfilInternet !=null){
+            return idPerfilInternet.getNombrePerfil();
+        }else{
+            return ":(";
+        }
+    }
+
 }

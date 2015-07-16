@@ -2,6 +2,7 @@ package sw1.servlets;
 
 import sw1.connector.DataBaseController;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,8 @@ public class welcome extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession ses = request.getSession(true);
         ses.setAttribute("accesos", DataBaseController.getInstance().getAllAccesos());
-        response.sendRedirect("welcome.jsp");
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/welcome.jsp");
+        dispatcher.forward(request, response);
     }
 }
